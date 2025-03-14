@@ -38,12 +38,14 @@ body{
     top: 30%;
     left: 50%;
     transform: translate(-50%,-50%);
+    text-align: center;/* make the text in the textbox center not div or others*/
 }
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 15px;
     backface-visibility: hidden;/*to fix shaking*/
+    margin-bottom: 10px;
 }
 .heading-primary-main{
     font-size: 60px;
@@ -61,8 +63,10 @@ display: block;
 font-size: 20px;
 font-weight: 200;
 font-style: italic;
-animation-name: Movefromright;
+/* animation-name: Movefromright;
 animation-duration: 3s;
+animation-timing-function: ease-out; three in one*/
+animation: Movefromright 3s ease-in-out;
 
 }
 /*  use keyframes to display scrolling in css */
@@ -109,10 +113,20 @@ opacity: 1;
 .btn:visited{
 text-transform: uppercase;
 text-decoration: none;
-padding: 10px;
-align-self: center;
+padding: 10px 50px;
+display: inline-block;/*  to make the element contain independent spaces*/
+ border-radius: 100px;
 }
 .btn-muleta{
     background-color: #fff;
     color: #777;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:active{
+    /*  when the button is clicked */
+    transform: translateY(1px);
 }
