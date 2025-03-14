@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+     box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+    background-color: #fff;
+}
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+     rgba(126, 213, 111, 0.7),
+      rgba(40, 180, 133, 0.7)), 
+    url("../images/back.jpg");
+    background-size: cover;
+    background-position: center;/* when the image is resize  only value given is stay and other is cropped*/
+        /* background: linear-gradient(to right, rgb(0, 255, 51), green); it works also but use in background image */
+        clip-path: polygon(0% 0%, 0% 100%, 100% 64%, 100% 1%);
+        position: relative;
+}
+.logo-box{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.logo{
+    height: 50px;
+}
+.text-box{
+    /* we create the div and make it center to make the front text to the center*/
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    backface-visibility: hidden;/*to fix shaking*/
+}
+.heading-primary-main{
+    font-size: 60px;
+    font-weight: 400;
+    display: block;
+    animation-name: MovefromLeft;
+    animation-duration: 3s;
+    animation-delay: 0ms;/* before the action is start we have to delay 0s*/
+    animation-iteration-count: 1; /* how many times the animation will duplicated*/
+    animation-timing-function: ease-in-out;
+    
+}
+.heading-primary-sub{
+display: block;
+font-size: 20px;
+font-weight: 200;
+font-style: italic;
+animation-name: Movefromright;
+animation-duration: 3s;
+
+}
+/*  use keyframes to display scrolling in css */
+
+@keyframes MovefromLeft{
+    0%{
+  opacity: 0;
+  transform: translateX(-100%) ;
+    }
+    70%{
+transform: translateX(50px);
+    }
+    80%{
+        transform: translate(0) rotate(90deg);        
+    }
+    90%{
+         transform: translateY(-30px);
+    }
+    100%{
+opacity: 1;
+ transform: translate(0);
+    }
+}
+@keyframes Movefromright{
+    0%{
+  opacity: 0;
+  transform: translateX(100%);
+    }
+    70%{
+        transform: translateX(-50px);
+        }
+        75%{
+            transform: translate(0) rotate(-180deg);        
+        }
+        80%{
+            transform: translateY(30px);
+       }
+    100%{
+opacity: 1;
+ transform: translate(0);
+    }
+}
+.btn:link,
+.btn:visited{
+text-transform: uppercase;
+text-decoration: none;
+padding: 10px;
+align-self: center;
+}
+.btn-muleta{
+    background-color: #fff;
+    color: #777;
+}
