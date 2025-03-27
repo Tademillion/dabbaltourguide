@@ -359,6 +359,7 @@ height: 5rem;
 .card{
     position: relative;
     perspective: 150rem;
+    height: 45rem;
    width: 100%;
    
     &:hover .card-side-front{
@@ -369,6 +370,7 @@ height: 5rem;
     }
 }
 .card-side{
+    
     position: absolute;
     top: 0;
     left: 0;
@@ -376,10 +378,10 @@ height: 5rem;
      border-radius: .4rem;
      box-shadow: 0 4rem 10rem rgba(0, 0, 0, .9rem);
 }
-.card{
-    height: 45rem;
-}
+
 .card-side-front{
+    box-shadow: 0 2rem 10rem rgba(0, 7687, 09988, .5);
+    border-radius: 0 10rem 0 10rem;
     backface-visibility: hidden;
     color: white;
     font-size: 2rem;
@@ -388,7 +390,9 @@ height: 5rem;
     transition: all .8s;}
 
 .card-side-back{
+    box-shadow: 0 2rem 10rem rgba(0, 7687, 09988, .5);
     backface-visibility: hidden;
+    border-radius: 10rem 0 10rem 0;
     box-sizing: border-box;
     padding:10rem 0 0 0;
     color: white;
@@ -401,12 +405,12 @@ height: 5rem;
 }
 .f1{
     /* background-color: green; */
-    background: linear-gradient(to right bottom, rgba(15, 241, 229, 0.99), rgba(23, 15, 241 ,.99));
+    background: linear-gradient(to right bottom, rgba(15, 241, 229, 0.5), rgba(23, 15, 241 ,.7));
 
     }
     .f2{
     /* background-color: #23b78b; */
-    background: linear-gradient(to right bottom, rgba(35, 183, 139, 1), rgba(48, 156, 214 ,1));
+    background: linear-gradient(to right bottom, rgba(35, 183, 139, .8), rgba(48, 156, 214 ,.7));
 
     
     }
@@ -462,7 +466,6 @@ height: 5rem;
        height: 20rem;
        padding: 2rem;
     }
-    
     .img2{
         background-image:linear-gradient(to right bottom,
         rgba(21, 216, 14, 0.3),
@@ -488,3 +491,61 @@ height: 5rem;
      display:  inline-block;
      margin-top: 3rem;
 }
+ul{
+    width: 80%;
+    margin: 1px 10% 1px 10%;
+     list-style: none;
+     padding: 0 2rem;
+}
+li{
+    text-align: left;
+     font-size: 1.5rem;
+     text-transform: capitalize;
+     &:not(:last-child){
+        border-bottom: 1px solid rgb(18, 138, 168);
+     }
+}
+.section-stories{
+     text-align: center;
+     padding: 15rem 0;
+}
+.story-witness{
+    margin: 10rem auto;
+   padding: 8rem;
+    background-color: #f3f3f3;
+   width: 70%;
+    clip-path: polygon(99% 5%, 93% 89%, 0 98%, 7% 14%);
+&:hover{
+    .story_caption{
+        position: absolute;
+        top: 30%;
+        left: 19%;
+        font-size: large;
+        color: white
+        }
+}
+
+}
+.story-image{
+/* margin-left: -3rem; */
+shape-outside: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  height: 10rem;
+  width: 10rem;
+  float: left;
+ position: relative;
+}
+.story-image-1{
+    background-image:  url("../images/human1.jpeg");
+    background-size: cover;
+}
+.story-image-2{
+    background-image:  url("../images/human2.jpeg");
+    background-size: cover;
+ 
+}
+.story-image-3{
+    background-image:  url("../images/human3.jpeg");
+    background-size: cover;
+}
+
