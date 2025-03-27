@@ -1,9 +1,27 @@
-*{
+
+*,
+*::after,
+*::before{
+    /*  before and after is usedto apply the properties to element contain the after and before contetn */
     padding: 0;
     margin: 0;
-     box-sizing: border-box;
+     box-sizing: border-box;/* this what happen if the padding and margin of each element is changed */
+     /*border: 1px solid red; /* Every element gets a border */
+     /* this element is applied to all elements include html  */
 }
+html{
+    font-size: 10px;/* if we want to use rem it percentage of this root element by default the size is 16px but we can chacnge like thi*/
+    /*  this is very important to  maintain the css file because when we use the  */
+}
+
+/*  concept of specificity  style precedence*/
+/* CSS specificity is a set of rules that determines which styles are applied to an 
+element when multiple selectors target it. It’s essentially how the browser decides which
+ CSS rule takes precedence when 
+there’s a conflict. Specificity is calculated based on the type of selectors used in a rule. 
+!important have precedence over all styles include inline styling */
 body{
+    /*  this is applied to body elements */
     font-family: sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -11,11 +29,12 @@ body{
     color: #777;
     padding: 30px;
     background-color: #fff;
+    border: 1px solid red;/* the body element make get borders*/
 }
 .header{
     height: 95vh;
     background-image: linear-gradient(to right bottom,
-     rgba(126, 213, 111, 0.7),
+     rgba(183, 216, 14, 0.5),
       rgba(40, 180, 133, 0.7)), 
     url("../images/back.jpg");
     background-size: cover;
@@ -37,24 +56,27 @@ body{
     position: absolute;
     top: 30%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-40%);
     text-align: center;/* make the text in the textbox center not div or others*/
 }
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 15px;
+    letter-spacing: 1.5rem;
     backface-visibility: hidden;/*to fix shaking*/
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 .heading-primary-main{
     font-size: 60px;
+    /*  default value of the font size of root in browsers is 16px */
+    /*  font size of the div in root element is 24px which is 1.5 rem or 15*16px all use this after that using inheritances */
     font-weight: 400;
+    
     display: block;
     animation-name: MovefromLeft;
     animation-duration: 3s;
     animation-delay: 0ms;/* before the action is start we have to delay 0s*/
-    animation-iteration-count: 1; /* how many times the animation will duplicated*/
+    animation-iteration-count: 1; /*     how many times the animation will duplicated infinite is also its value*/
     animation-timing-function: ease-in-out;
     
 }
@@ -67,7 +89,6 @@ font-style: italic;
 animation-duration: 3s;
 animation-timing-function: ease-out; three in one*/
 animation: Movefromright 3s ease-in-out;
-
 }
 /*  use keyframes to display scrolling in css */
 
@@ -113,7 +134,7 @@ opacity: 1;
 .btn:visited{
 text-transform: uppercase;
 text-decoration: none;
-padding: 10px 50px;
+padding: 1rem 5rem;
 display: inline-block;/*  to make the element contain independent spaces*/
  border-radius: 100px;
 }
@@ -121,12 +142,206 @@ display: inline-block;/*  to make the element contain independent spaces*/
     background-color: #fff;
     color: #777;
 }
-
 .btn:hover{
     transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.2);
 }
 .btn:active{
     /*  when the button is clicked */
     transform: translateY(1px);
+}
+
+
+.row{
+    margin: 0 auto;/*  best styleing margin of top and bottom is zero and the left and right margin are equal so the div mus be at the center horizontally*/  
+   max-width: 1140px;/* this means the row can be scale down below 1140px but not scale up above the 1140px and make the center using margin properties*/
+    background-color: #eee;
+    &:not(:last-child){
+        /*  apply this to all child except lasst child */
+        margin-bottom: 80px;
+    }
+}
+.col-1-of-2{
+background-color: orangered;
+width: 500px;
+&:not(:last-child){
+    /*  apply this to all child except lasst child */
+    margin-right: 140px;
+    
+}
+margin-bottom: 10px;
+float: left;
+height: 5rem;
+}
+.col-1-of-3{
+    background-color: orange;
+    float: left;
+    width:calc((1140px - 80px)/3) ;
+    &:not(:last-child)
+    {
+        margin-right: 40px;;
+    }
+    
+}
+.col-1-of-4{
+   width:1140px ;
+    margin: 0 auto;
+}
+.section-about{
+    background-color:#f7f7f7;
+    padding: 50rem 0;
+    padding-top: 30rem;
+    margin-top: -20vh;
+    text-align: center;
+}
+.heading-secondary{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-weight: 700;
+   background: linear-gradient(to right, #7ed56f,#28b485);
+   display: inline-block;/* make the background to take only content*/
+   /* width: 100%; */
+   -webkit-background-clip: text;
+   color: transparent; /* to make the background of the heading to the tex*/
+   letter-spacing: 3px;
+   transition: all .2s;
+  
+   margin-bottom: 7rem;
+   &:hover{
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem gray;
+   }
+}
+.part2{
+    background-color: #f7f7f7;
+     /* height: max-content; */
+
+}
+.part3{
+    background-color: #f7f7f7;
+     /* float: right; */
+}
+.heading-teritiary{
+    color: #28b485;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.paragraph{
+    font-size: 1.6rem;
+    &:not(:last-child){
+        margin-bottom: 1.3rem;
+    }
+}
+.btn-text{
+    &:link,&:visited{
+        font-size: 1.6rem;
+        color: #55c57a;
+        text-decoration: none;
+        display: inline-block;/* to use  widht and height*/
+        border-bottom: 1px solid #55c57a;
+        padding: 3px;
+        
+    }
+    &:hover{
+        color: white;
+        transform: translateY(-10px);
+        background-color: #0aee70;
+        text-shadow: 0 1rem 5rem #000;
+    }
+    &:active{
+        transform: translateY(0);
+    }
+}
+/*  part 5 */
+.composition{
+    position: relative;
+}
+.composition_photo{
+        width: 55%;
+        border-radius: 2px;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4) ;       
+}
+.composition_photo_p1{
+     position:absolute;
+      top: -10%;  
+      left: -2rem;  
+      &:hover{
+
+        box-shadow: 0 1rem 1rem  rgba(0, 0, 0, .5);
+        z-index: 1;
+         transform: scale(1.2);
+         padding: 1rem;
+          border: solid #0aee70 10px;
+          transform: scale(1.5) rotate(9deg);
+          transition: transform .5s;
+    }
+}
+.composition_photo_p2{
+    position: absolute;
+    top: 4rem;  
+    left: 30%;  
+    &:hover{
+        box-shadow: 0 1rem 1rem  rgba(0, 0, 0, .5);
+        z-index: 1;
+         transform: scale(1.5) rotate(9deg);
+         padding: 1rem;
+         border: solid #0aee70 10px;
+         transition: transform .5s;
+    }
+} 
+.composition_photo_p3{
+    position: absolute;
+    top:13rem;  
+    left:5%; 
+    outline-offset: 2rem;
+    &:hover{
+        box-shadow: 0 1rem 1rem  rgba(0, 0, 0, .5);
+        z-index: 1;
+         transform: scale(1.2);
+         transform: scale(1.5) rotate(9deg);
+         padding: 1rem;
+         /* border: solid #0aee70 10px; */
+         transition: transform .5s;
+        outline: 1rem solid #0aee70;/* outline and */
+         
+    } 
+    
+} 
+.section-feature{
+    padding: 25rem 0;
+    /* margin-top: -20rem; */
+    z-index: 1;
+    background-image: linear-gradient(to right bottom,
+     rgba(21, 216, 14, 0.5),
+      rgba(40, 180, 133, 0.7)), 
+    url("../images/house-3.jpeg");
+    background-size: cover;
+    background-position: center;/* when the image is resize  only value given is stay and other is cropped*/
+        /* background: linear-gradient(to right, rgb(0, 255, 51), green); it works also but use in background image */
+        /* clip-path: polygon(100% 12%, 100% 85%, 0 100%, 0 43%); */
+        position: relative;
+}
+.feature-box{
+    background-color: rgba(10, 238, 112, 1);
+    padding: 2.5rem;
+    text-align: center;
+   color: black;
+   float: left;
+   
+   width:calc((1140px - 80px)/4) ;
+  
+    /* border-radius: 2.5rem; */
+     box-shadow: 0 .2rem 1rem rgba(0, 0, 0, .15);
+     &:hover{
+        transform: scale(1.1);
+       
+     }
+     &:not(:last-child){
+        margin-right: 2rem; 
+       }
+      
+}
+.heading-3{
+    color: black;
 }
