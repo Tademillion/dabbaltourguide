@@ -342,6 +342,11 @@ height: 5rem;
        }
       
 }
+.feature-box-icon{
+    font-size: 4rem;
+    /*  its svg so adjust only font-size not height and width */
+}
 .heading-3{
-    color: black;
+    outline-color: red;
+    color: red
 }
