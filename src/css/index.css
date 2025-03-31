@@ -508,10 +508,28 @@ li{
 .section-stories{
      text-align: center;
      padding: 15rem 0;
+     /* width: 1140px; */
+     /* background-color: red; */
+     position: relative;
+}
+.bg_video_content{
+    width: 100%;
+    height: 100%;
+}
+.bg-video{
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+z-index: -1;
+opacity: .8 ;
 }
 .story-witness{
-    margin: 10rem auto;
-   padding: 8rem;
+    margin: 3rem auto;
+    margin-top: 0;
+   padding: 5rem;
+   
     background-color: #f3f3f3;
    width: 70%;
     clip-path: polygon(99% 5%, 93% 89%, 0 98%, 7% 14%);
@@ -523,6 +541,7 @@ li{
         font-size: large;
         color: white
         }
+        
 }
 
 }
