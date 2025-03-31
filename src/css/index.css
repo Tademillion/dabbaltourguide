@@ -568,3 +568,93 @@ shape-outside: circle(50% at 50% 50%);
     background-size: cover;
 }
 
+.booking_section{
+    background-color: #0aee70;
+    padding: 10rem 0;
+}
+.bg-booking{
+    background-image:linear-gradient(105deg ,
+    rgba(255,255,255,.8) 0%,
+    rgba(255,255,255,.8) 50%,
+    transparent 50%), url("../images/mountains.jpg");
+     
+   background-size: cover;
+   z-index: 1;
+   margin: -1rem auto;
+   height: 70%;
+   width: 80%;
+}
+.book-now{
+    width: 50%;
+    height: 100%;
+    left: 0;
+    padding-top: 10rem;
+    text-align: center;
+    text-transform: uppercase;
+   /* background-color: red; */
+
+}
+.firstname{
+    margin-bottom: 4rem; 
+}
+.lastName{
+    margin-bottom: 4rem; 
+}
+.Email{
+    margin-bottom: 4rem; 
+}
+.form-input{
+     display: block;
+     padding: 1rem;
+     width: 60%;
+     border: .2rem double white;
+     box-shadow: 0 1rem 10rem rgb(255, 255, 255);
+     margin:  1rem auto;
+     box-shadow: 0 10rem 10rem rgb(255, 255, 255);
+     
+     outline: none;
+      &:focus
+      {
+        border-bottom: .3rem solid green;
+      }
+}
+.booking-heading{
+    color:  green;
+}
+.book-btn{
+    border-radius: 5rem;
+    padding: .9 rem;
+    background-color: white;
+    border: 1rem solid white;
+    text-transform: uppercase;
+    width: 30%;
+    &:hover{
+         transform: scale(1.1);
+    }
+   
+}
+.radionbuuton{
+    width: 60%;
+    display: flex;  
+    gap: 1rem;              
+    margin: 2rem auto;
+   
+        appearance: none; /* Remove default styling */
+  
+    
+}
+.radiostyle{
+    width: 2rem;            /* Width of radio button */
+    height: 2rem;           /* Height of radio button */
+    margin: 0;             /* Remove default margins */
+
+    &:checked{
+        background-color: #007BFF; /* Background color when checked */
+        
+    }
+}
+.radionbuuton label{
+    color:black;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
