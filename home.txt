@@ -1,9 +1,3 @@
  use touch .extenstion  to create the files and
-<<<<<<< HEAD
 this git merge conflicts
 this  git   i dont  want to  replace the existing code when i pull the request since not have conflicts
-=======
-notepad
-this git repo conflict
-this  git repo conflict
->>>>>>> b42a746037f89bcedd4a578a815c17493f792a0e
