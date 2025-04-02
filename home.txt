@@ -1,2 +1,3 @@
  use touch .extenstion  to create the files and
-notepad
+this git merge conflicts
+this  git   merge conflicts
