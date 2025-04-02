@@ -1,3 +1,7 @@
  use touch .extenstion  to create the files and
 this git merge conflicts
 this  git   i dont  want to  replace the existing code when i pull the request since not have conflicts
+notepad
+this git repo conflict
+this  git repo conflict
+how can i use git pull
