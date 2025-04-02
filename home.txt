@@ -1,2 +1,2 @@
  use touch .extenstion  to create the files and
-notepad filename.txt to open in noetepad
+notepad
