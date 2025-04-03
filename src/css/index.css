@@ -37,7 +37,7 @@ body{
      rgba(183, 216, 14, 0.5),
       rgba(40, 180, 133, 0.7)), 
     url("../images/back.jpg");
-    background-size: cover;
+    background-size: cover;/*cover all the size of the header*/
     background-position: center;/* when the image is resize  only value given is stay and other is cropped*/
         /* background: linear-gradient(to right, rgb(0, 255, 51), green); it works also but use in background image */
         clip-path: polygon(0% 0%, 0% 100%, 100% 64%, 100% 1%);
@@ -73,6 +73,7 @@ body{
     font-weight: 400;
     
     display: block;
+    
     animation-name: MovefromLeft;
     animation-duration: 3s;
     animation-delay: 0ms;/* before the action is start we have to delay 0s*/
@@ -86,9 +87,13 @@ font-size: 20px;
 font-weight: 200;
 font-style: italic;
 /* animation-name: Movefromright;
-animation-duration: 3s;
+animation-duration: 3s;   its tme taken to finish  one animation full path
 animation-timing-function: ease-out; three in one*/
-animation: Movefromright 3s ease-in-out;
+animation-delay: 0ms;/*its time taken to start animation*/
+animation: Movefromright 3s ease-in;
+
+
+
 }
 /*  use keyframes to display scrolling in css */
 
@@ -110,6 +115,9 @@ transform: translateX(50px);
 opacity: 1;
  transform: translate(0);
     }
+}
+@keyframes keyfrmaename{
+
 }
 @keyframes Movefromright{
     0%{
@@ -144,17 +152,23 @@ display: inline-block;/*  to make the element contain independent spaces*/
 }
 .btn:hover{
     transform: translateY(-3px);
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+     */
+     /* glow effect additional px is radius to effect is visible */
+
+     box-shadow: 0 0 15px 1px rgba(255, 0, 0, 0.7);
+     box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.8);
     transform: scale(1.2);
 }
 .btn:active{
     /*  when the button is clicked */
-    transform: translateY(1px);
+    transform: translateY(1px) translateX(100px);
+    
 }
 
 
 .row{
-    margin: 0 auto;/*  best styleing margin of top and bottom is zero and the left and right margin are equal so the div mus be at the center horizontally*/  
+    margin: 0 auto;/*  best styleing margin of top and bottom is zero and the left and right margin are equal so the div must be at the center horizontally*/  
    max-width: 1140px;/* this means the row can be scale down below 1140px but not scale up above the 1140px and make the center using margin properties*/
     background-color: #eee;
     &:not(:last-child){
@@ -268,7 +282,7 @@ height: 5rem;
       left: -2rem;  
       &:hover{
 
-        box-shadow: 0 1rem 1rem  rgba(0, 0, 0, .5);
+        box-shadow: 0 0 1rem 1rem  rgba(0, 0, 0, .5);/*4th is radius*/
         z-index: 1;
          transform: scale(1.2);
          padding: 1rem;
@@ -347,7 +361,7 @@ height: 5rem;
     /*  its svg so adjust only font-size not height and width */
 }
 .heading-3{
-    outline-color: red;
+    /* outline-color: red; */
     color: red
 }
 .section-tours{
@@ -406,24 +420,19 @@ height: 5rem;
 .f1{
     /* background-color: green; */
     background: linear-gradient(to right bottom, rgba(15, 241, 229, 0.5), rgba(23, 15, 241 ,.7));
-
     }
     .f2{
     /* background-color: #23b78b; */
     background: linear-gradient(to right bottom, rgba(35, 183, 139, .8), rgba(48, 156, 214 ,.7));
-
-    
     }
     .f3{
     background-color: #0fe2f1;
     background-size: cover;
     /* background: linear-gradient(to right bottom, rgba(82, 138, 211, 0), rgba(214, 137, 16 ,.7)); */
-
     }
     .b1{
         /* background-color: rgb(82, 138, 211); */
     background: linear-gradient(to right bottom, rgba(82, 138, 211, 0.7), rgba(214, 137, 16 ,.7));
-
     }
     .b2{
     background-color: #10ee86;
@@ -608,10 +617,8 @@ shape-outside: circle(50% at 50% 50%);
      padding: 1rem;
      width: 60%;
      border: .2rem double white;
-     box-shadow: 0 1rem 10rem rgb(255, 255, 255);
      margin:  1rem auto;
-     box-shadow: 0 10rem 10rem rgb(255, 255, 255);
-     
+     box-shadow: 0 0   5rem 10px rgb(255, 255, 255);
      outline: none;
       &:focus
       {
@@ -650,7 +657,7 @@ shape-outside: circle(50% at 50% 50%);
 
     &:checked{
         background-color: #007BFF; /* Background color when checked */
-        
+       
     }
 }
 .radionbuuton label{
