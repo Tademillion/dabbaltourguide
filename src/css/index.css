@@ -650,6 +650,7 @@ shape-outside: circle(50% at 50% 50%);
   
     
 }
+/* style radiostyle */
 .radiostyle{
     width: 2rem;            /* Width of radio button */
     height: 2rem;           /* Height of radio button */
