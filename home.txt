@@ -5,3 +5,4 @@ notepad
 this git repo conflict
 this  git repo conflict
 how can i use git pull
+i want to  know about gitignore and git reset
